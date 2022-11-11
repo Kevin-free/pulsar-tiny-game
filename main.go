@@ -9,8 +9,8 @@ import (
 	"strings"
 )
 
-const privateKeyPath = ""
-const pulsarUrl = ""
+const privateKeyPath = "file://o-qwiyt-kevin.json"
+const pulsarUrl = "pulsar+ssl://test-cluster.o-qwiyt.snio.cloud:6651"
 
 func main() {
 	ebiten.SetWindowSize(screenWidth, screenHeight)

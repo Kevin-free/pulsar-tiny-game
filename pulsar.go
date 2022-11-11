@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"github.com/apache/pulsar-client-go/pulsar"
-	log "github.com/sirupsen/logrus"
 	"math"
 	"time"
+
+	"github.com/apache/pulsar-client-go/pulsar"
+	log "github.com/sirupsen/logrus"
 )
 
 // EventMessage is the data in Pulsar
@@ -48,9 +49,9 @@ func newPulsarClient(topicName, subscriptionName, keyPath string) *pulsarClient 
 	oauthConfig := map[string]string{
 		"type":       "client_credentials",
 		"issuerUrl":  "https://auth.streamnative.cloud/",
-		"audience":   "urn:sn:pulsar:o-7udlj:free",
+		"audience":   "urn:sn:pulsar:o-qwiyt:test-instance",
 		"privateKey": keyPath,
-		"clientId":   "fdl_test",
+		"clientId":   "yxIelouHmZhO8LeoiXgUfnTXXn2Dmvtn",
 	}
 	oauth := pulsar.NewAuthenticationOAuth2(oauthConfig)
 	client, err := pulsar.NewClient(pulsar.ClientOptions{

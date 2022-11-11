@@ -3,6 +3,11 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"image/color"
+	"math/rand"
+	"strings"
+	"time"
+
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/audio"
 	"github.com/hajimehoshi/ebiten/v2/audio/wav"
@@ -10,10 +15,6 @@ import (
 	raudio "github.com/hajimehoshi/ebiten/v2/examples/resources/audio"
 	"github.com/hajimehoshi/ebiten/v2/inpututil"
 	log "github.com/sirupsen/logrus"
-	"image/color"
-	"math/rand"
-	"strings"
-	"time"
 )
 
 const (
@@ -196,11 +197,11 @@ func (g *Game) sendSync(event Event) {
 func (g *Game) Draw(screen *ebiten.Image) {
 	// todo replace Rect with images
 
-	for pos, _ := range g.posToBombs {
+	for pos := range g.posToBombs {
 		ebitenutil.DrawRect(screen, float64(pos.X*gridSize), float64(pos.Y*gridSize), gridSize, gridSize, bombColor)
 	}
 
-	for pos, _ := range g.obstacleMap {
+	for pos := range g.obstacleMap {
 		ebitenutil.DrawRect(screen, float64(pos.X*gridSize), float64(pos.Y*gridSize), gridSize, gridSize, obstacleColor)
 	}
 
